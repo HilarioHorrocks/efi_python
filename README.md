@@ -18,16 +18,13 @@ A continuación se describen los principales endpoints de la API con ejemplos de
     "username": "tu_usuario",
     "password": "tu_contraseña"
 }
-```
-Ejemplo de respuesta
 
+Ejemplo de respuesta
 {
     "Token": "Bearer tu_token_de_autenticacion"
 }
-----------------------
 
-# Endpoints de la API
-
+```
 A continuación se describen los principales endpoints de la API con ejemplos de solicitud y respuesta.
 
 ## Usuarios
