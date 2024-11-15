@@ -1,26 +1,27 @@
-# Documentación de la API
+# Endpoints de la API
 
-Esta API permite la autenticación básica para obtener un token de acceso, utilizando un endpoint protegido.
+A continuación se describen los principales endpoints de la API con ejemplos de solicitud y respuesta.
 
-## Endpoints
+## Autenticación
 
-### **POST** `/login`
+### Obtener token de autenticación
 
-Este endpoint permite a los usuarios autenticarse con sus credenciales y recibir un token de acceso. El token tiene una validez de 20 minutos y contiene información adicional sobre el usuario autenticado, como si es administrador.
+- **Método**: POST
+- **Endpoint**: `/login`
+- **Encabezado de la solicitud**:
+  - `Authorization`: Credenciales en formato básico (`username:password` codificados en base64).
 
-#### **Autenticación**
-- **Tipo:** Autenticación básica
-- **Encabezados requeridos:**
-  - `Authorization`: Debe contener las credenciales del usuario en formato básico (`username:password`).
+#### Cuerpo de la solicitud
 
-#### **Parámetros de entrada**
+```json
+{
+    "username": "tu_usuario",
+    "password": "tu_contraseña"
+}
 
-El encabezado `Authorization` debe incluir:
-- **username**: Nombre de usuario.
-- **password**: Contraseña del usuario.
 
-#### **Ejemplo de solicitud**
+Ejemplo de respuesta
 
-```bash
-curl -X POST http://localhost:5000/login \
-    -u username:password
+{
+    "Token": "Bearer tu_token_de_autenticacion"
+}
