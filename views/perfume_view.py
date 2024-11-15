@@ -14,9 +14,7 @@ def perfumes():
         perfumes = Perfume.query.all()
         return PerfumeSchema().dump(perfumes, many=True)
 
-    # Método POST: solo los administradores pueden agregar perfumes
-   #if not current_user.is_admin:
-    #return jsonify({"error": "No tienes permisos para realizar esta acción"}), 403
+
 
     data = request.get_json()
     errors = PerfumeSchema().validate(data)
